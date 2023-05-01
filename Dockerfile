@@ -9,9 +9,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt update && apt-get update
 RUN apt install git tmux -y
 
-COPY ./tello-ros2 /tello-ros2
+COPY ./scripts /scripts
 
-WORKDIR /tello-ros2
+# WORKDIR /tello-ros2
 
 RUN apt install build-essential gdb -y
 RUN apt update && apt install -y locales && locale-gen en_US en_US.UTF-8 && \
